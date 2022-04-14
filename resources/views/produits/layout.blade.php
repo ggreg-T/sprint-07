@@ -14,7 +14,7 @@ body{
 }
 
 .banniere{
-    z-index: -1;
+    /* z-index: -1; */
     position:  sticky;
     width: 90%;
     height: 90px;
@@ -61,7 +61,7 @@ vertical-align: top;
     text-align: center;
     vertical-align:auto;
     font-size: 25px;
-    color: red;
+    color: black;
 
 
     background: #26BAEE;
@@ -71,10 +71,25 @@ vertical-align: top;
     border-radius: 10px;
 }
 
-#inscrit:hover {
-    background: white;
-    color: black;
+.buttonban:hover{
+    background: #9FE8FA
+;
+    color: #00BD56
+;
 
+}
+
+.footer{
+    position:sticky;
+    bottom:0;
+    width: 100%;
+    height: 50px;
+    
+  
+    background: #00BD56;
+    padding-left: 50px;
+    padding-top: 10px;
+ 
 }
 
 </style>
@@ -89,16 +104,17 @@ vertical-align: top;
 <div class="imgping">
 <img src="{{URL::asset('/image/cinema-penguin.png')}}" alt="profile Pic" height=auto width="75px"></div>
    <div class="textcinemactus">CinémActus</div>
-   <div class="buttonban" id="inscrit">INSCRIPTION</div>
+   <div class="buttonban" >INSCRIPTION</div>
    <div class="buttonban">CONNEXION</div>
 </div>
 </div>
 
 
 
-<div class="container p-3 mt-4 border border-primary shadow-lg p-3 mb-5 rounded">
+<div class="container p-3 mt-4   p-3 mb-5 rounded bg-succes">
     @yield('content')
 </div>
 </div>
+<div class="footer">Simplon DWWM 2021 - Sprint 07 - HOUSSEINE - TECHER - SUBIRATS</div>
 </body>
 </html>
