@@ -1,31 +1,35 @@
 @extends('layouts.front')
 @section('title', 'Lire l\'article '.$post->title)
 @section('content')
-	<section class="mx-auto py-2 my-6 border-b border-gray-400">
-	    <h1 class="text-3xl text-blue-700 my-8">{{ $post->title}}</h1>
+	<section >
+	    
+           <h1 >{{ $post->title}}</h1>
 	    <p>{{ $post->content }}</p>
+        
+        {{-- <h1 class="text-3xl text-blue-700 my-8">{{ $post->title}}</h1>
+	    <p>{{ $post->content }}</p> --}}
 	</section>
-	<h2 class="text-2xl text-blue-500">Les commentaires</h2>
+	<h2 >Les commentaires</h2>
 	@forelse($post->comments as $comment)
-		<section class="mx-auto py-2 my-6 border-b border-gray-400">
-		    <h3 class="text-xl text-blue-400 my-8">{{ $comment->title }} par {{ $comment->author }}</h3>
+		<section >
+		    <h3 >{{ $comment->title }} par {{ $comment->author }}</h3>
 		    @if($comment->reported)
 		    	<p>Le message a été signalé</p>
 		    @else
 		    	<p>{{ $comment->content }}</p>
-		    	<a class="text-red-400" href="{{ route('comments.report', $comment) }}">Signaler le commentaire</a>
+		    	<a  href="{{ route('comments.report', $comment) }}">Signaler le commentaire</a>
 		    @endif
 		    @if(Auth::check() and Auth::user()->admin)
 		    	<a href="{{ route('comments.edit', $comment) }}">Editer le commentaire</a>
 		    @endif
 		</section>
 	@empty
-		<p>Soyez le premier à laisser un commentaire ! </p>
+		<h3>Soyez le premier à laisser un commentaire ! </h3>
 	@endforelse
-    <form action="{{ route('comments.store') }}" method="POST" class="my-6 sm:w-1/2 mx-auto">
+    <form action="{{ route('comments.store') }}" method="POST" >
     	<h2>Laisser un commentaire</h2>
     	 @if(session('success'))
-            <div class="text-xl text-green-400">
+            <div >
                 {{ session('success') }}
             </div>
         @endif

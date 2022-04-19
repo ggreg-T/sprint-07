@@ -84,7 +84,7 @@
                        <table class="blueTable">
 <tbody>
 <tr>
-<td>  <div class="titre"><a href="{{ route('posts.index') }}">Les films</a></div>
+<td>  <div class="titre"><a href="{{ route('posts.index') }}">Liste des films</a></div>
                 @yield('content')</td></tr>
 </tbody>
 </tr>
