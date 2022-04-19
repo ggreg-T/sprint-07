@@ -7,9 +7,9 @@
 
         
 
-        <title>@yield('title', 'Blog')</title>
+        <title>@yield('title', 'Cinémactus')</title>
 
-        <meta name="description" content="@yield('meta', 'Articles lunaires et articles heureux sur ce blog merveilleux')">
+        <meta name="description" content="@yield('meta', 'Venez discuter de l&#039actu du cinémas')">
 
         <!-- Fonts -->
          <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">

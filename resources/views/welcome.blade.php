@@ -1,5 +1,5 @@
 @extends('layouts.front')
-@section('title', 'Accueil du blog')
+@section('title', 'Accueil de CinémActus')
 @section('content')
     <h1 class="text-3xl text-blue-700 my-8">Bienvenue sur mon super blog</h1>
     <p>Retrouvez des articles de qualité sur des sujets variés qui embelliront vos journées !</p>
