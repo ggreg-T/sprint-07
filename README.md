@@ -5,8 +5,7 @@ Une application utilisant CRUD Laravel 8.
 
 # Lancement du site
 
-http://....................
-
+http://subirats-yannick.sprint-07.sc1lgvu9627.universe.wf/
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
