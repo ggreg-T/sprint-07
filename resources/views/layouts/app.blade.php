@@ -17,15 +17,24 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        <div >
             @include('layouts.navigation')
 
             <!-- Page Heading -->
-            <header class="bg-white shadow">
+
+<table class="tablepost">
+<tbody>
+<tr>
+<td><header class=" shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
+                    {{ $header }} 
                 </div>
-            </header>
+            </header></td></tr>
+</tbody>
+</tr>
+</table>
+
+            
 
             <!-- Page Content -->
             <main>

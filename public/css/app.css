@@ -125,7 +125,7 @@ p {
 }
 
 .footer {
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     width: 100%;
     height: 50px;
@@ -1074,13 +1074,19 @@ select {
     border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 .bg-white {
+    /* --tw-bg-opacity: 1; */
+    background-color: #9fe8fa;
+}
+
+/* .bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.bg-gray-100 {
+} */
+
+/* .bg-gray-100 {
     --tw-bg-opacity: 1;
     background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
+} */
 .bg-gray-800 {
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55 / var(--tw-bg-opacity));
