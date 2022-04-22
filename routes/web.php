@@ -4,7 +4,8 @@ use App\Http\Controllers\CommentsController;
 
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\PostsController;
-use App\Http\Controllers\UsersController;use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 Route::get('/users', [UsersController::class, 'index'])->middleware(['auth', 'admin'])->name('users');
 Route::get('/users/profile/{user}', [UsersController::class, 'show'])->name('users.show');
@@ -34,6 +37,12 @@ Route::resource('posts', PostsController::class);
 Route::resource('comments', CommentsController::class);
 
 Route::get('comments/{comment}/report', [CommentsController::class, 'report'])->name('comments.report');
+
+// Fais Maison
+
+Route::get('comments/{comment}/destroy', [CommentsController::class, 'destroy'])->name('comments.destroy');
+
+Route::get('posts/{post}/destroy', [PostsController::class, 'destroy'])->name('posts.destroy');
 
 Route::get('/', [FrontController::class, 'welcome']);
 
