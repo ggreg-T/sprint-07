@@ -38,11 +38,16 @@ Route::resource('comments', CommentsController::class);
 
 Route::get('comments/{comment}/report', [CommentsController::class, 'report'])->name('comments.report');
 
-// Fais Maison
+// Fait Maison
 
 Route::get('comments/{comment}/destroy', [CommentsController::class, 'destroy'])->name('comments.destroy');
 
 Route::get('posts/{post}/destroy', [PostsController::class, 'destroy'])->name('posts.destroy');
+Route::patch('posts/{post}/update', [PostsController::class, 'update'])->name('posts.update');
+Route::get('posts/{post}/edit', [PostsController::class, 'edit'])->name('posts.edit');
+//dd('posts.update');
+
+
 
 Route::get('/', [FrontController::class, 'welcome']);
 

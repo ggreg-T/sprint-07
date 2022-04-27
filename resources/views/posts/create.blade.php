@@ -21,7 +21,7 @@
                             <label for="title" class="block text-sm font-medium text-gray-700">Titre</label>
                             <input type="text" name="title" id="title" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" value="{{ old('title') }}">
                             @error('title')
-                            <span class="text-red-600">{{ $message }}popo</span>
+                            <span class="text-red-600">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="py-2">
