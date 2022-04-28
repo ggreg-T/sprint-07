@@ -6,7 +6,9 @@ Une application utilisant CRUD Laravel 8.
 # Lancement du site
 
 http://subirats-yannick.sprint-07.sc1lgvu9627.universe.wf/
+
 ## License
+
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 # Maquette
@@ -21,7 +23,7 @@ https://www.gekkode.com/developpement/tutoriel-laravel-8-3-la-structure-mvc/
 
 ```mermaid
 sequenceDiagram
-    participant Admin
+    participant Visiteur
     participant Routeur
     participant Controller
     participant View
@@ -31,7 +33,7 @@ sequenceDiagram
     Routeur->>View : GET /
 
         activate View
-    View ->>Admin : POST page "'welcome'"
+    View ->>Visiteur : POST page "'welcome'"
     deactivate View
 
 ```
@@ -68,6 +70,9 @@ deactivate View
     activate Controller
     Controller ->> View : Affichage ()
     deactivate Controller
+    activate View
+    View ->> Admin : page Post
+    deactivate View
 ```
 
 ## UML Sequence Read post
@@ -96,6 +101,9 @@ sequenceDiagram
      activate Controller
      Controller ->>View : Affichage()
      deactivate Controller
+     activate View
+    View ->> Admin : page Post
+    deactivate View
 
 ```
 
@@ -133,6 +141,9 @@ sequenceDiagram
      activate Controller
      Controller ->> View : Affichage
       deactivate Controller
+      activate View
+    View ->> Admin : page Post
+    deactivate View
 
 
 ```
@@ -151,12 +162,12 @@ sequenceDiagram
 
     Admin->>Routeur : page choix film
     Routeur->>View: GET
-activate View
+    activate View
     View ->>Controller: Read()
     deactivate View
     activate Controller
     Controller->>Modele: GET
-     deactivate Controller
+    deactivate Controller
     activate Modele
     Modele ->> Controller : POST
 
@@ -170,6 +181,9 @@ activate View
      activate Controller
      Controller ->> View : Affichage()
      deactivate Controller
+     activate View
+     View ->> Admin : page Post
+     deactivate View
 
 
 ```
