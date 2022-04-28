@@ -5,7 +5,7 @@ Une application utilisant CRUD Laravel 8.
 
 # Lancement du site
 
-http://subirats-yannick.sprint-07.sc1lgvu9627.universe.wf/
+http://techer-gregory.sprint-07.sc1lgvu9627.universe.wf/
 
 ## License
 
