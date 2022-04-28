@@ -29,7 +29,7 @@ sequenceDiagram
     participant View
     participant Modele
 
-    Admin->>Routeur : lancer la premiere page
+    Visiteur->>Routeur : lancer la premiere page
     Routeur->>View : GET /
 
         activate View
@@ -47,23 +47,18 @@ sequenceDiagram
     participant Admin
     participant Routeur
     participant Controller
-    participant View
     participant Modele
+    participant View
 
-    Admin->>Routeur : page choix film
-    Routeur->>View: GET
-activate View
-View ->>Controller: Read()
-deactivate View
-    activate Controller
-    Controller->>Modele: GET
-     deactivate Controller
-    activate Modele
-    Modele ->> Controller : POST
-     deactivate Modele
-     activate Controller
-       Controller->> Modele : Create() create.blade.php
-    deactivate Controller
+    Admin->>Routeur : Appel page post CinemActu
+    activate Routeur
+    Routeur->>Controller: data :"posts/create" , Route vers "posts"
+deactivate Routeur
+
+activate Controller
+       Controller->> Modele : Methode:GET create.blade.php
+deactivate Controller
+
     activate Modele
     Modele ->> Controller: POST
     deactivate Modele
@@ -84,16 +79,16 @@ sequenceDiagram
     participant Admin
     participant Routeur
     participant Controller
-    participant View
     participant Modele
+     participant View
 
     Admin->>Routeur : page choix film
-    Routeur->>View: GET
-    activate View
-    View ->>Controller: Read()
-    deactivate View
+    Routeur->>Controller: GET show()
     activate Controller
-    Controller->>Modele: GET
+
+    deactivate Controller
+    activate Controller
+    Controller->>Modele: data: posts/{post}Methode:GET
      deactivate Controller
     activate Modele
     Modele ->> Controller : POST show.blade.php
@@ -102,7 +97,7 @@ sequenceDiagram
      Controller ->>View : Affichage()
      deactivate Controller
      activate View
-    View ->> Admin : page Post
+    View ->> Admin : web
     deactivate View
 
 ```
@@ -116,27 +111,20 @@ sequenceDiagram
     participant Admin
     participant Routeur
     participant Controller
-    participant View
     participant Modele
+    participant View
 
     Admin->>Routeur : page choix film
 
-    Routeur->>View: GET
-    activate View
-    View->> Controller: Read()
-    deactivate View
-    activate Controller
-    Controller->>Modele: GET
-     deactivate Controller
-    activate Modele
-    Modele ->> Controller : POST show.blade.phph
+    Routeur->>Controller: GET: data destroy
 
-     deactivate Modele
-    activate Controller
-     Controller->>Modele:Delete()
-     deactivate Controller
+     Controller->>Modele: DELETE posts/{post} posts.destroy
+
+
+
+
      activate Modele
-     Modele ->> Controller: POST
+     Modele ->> Controller: renvoie
      deactivate Modele
      activate Controller
      Controller ->> View : Affichage
@@ -157,32 +145,23 @@ sequenceDiagram
     participant Admin
     participant Routeur
     participant Controller
-    participant View
     participant Modele
+    participant View
 
     Admin->>Routeur : page choix film
-    Routeur->>View: GET
-    activate View
-    View ->>Controller: Read()
-    deactivate View
-    activate Controller
-    Controller->>Modele: GET
-    deactivate Controller
-    activate Modele
-    Modele ->> Controller : POST
+    Routeur->>Controller:  PUT posts/{post}
 
-     deactivate Modele
      activate Controller
      Controller->>Modele:Update()
      deactivate Controller
      activate Modele
-     Modele ->> Controller : POST show.blade.php
+     Modele ->> Controller : posts.update
      deactivate Modele
      activate Controller
-     Controller ->> View : Affichage()
+     Controller ->> View : App\Http\Middleware\Authenticate
      deactivate Controller
      activate View
-     View ->> Admin : page Post
+     View ->> Admin : page affichage web
      deactivate View
 
 
